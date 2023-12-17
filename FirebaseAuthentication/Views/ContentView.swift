@@ -52,6 +52,7 @@ struct ContentView: View {
                         
             authView
                 .isHidden(!showAuthView, remove: true)
+                .transition(AnyTransition.asymmetric(insertion: .push(from: .leading), removal: .push(from: .trailing)))
         }
         .onChange(of: authTracker.isAuthenticated){ value in
             if value{
