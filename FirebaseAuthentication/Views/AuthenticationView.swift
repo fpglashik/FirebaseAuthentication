@@ -54,7 +54,11 @@ struct AuthenticationView: View{
                 }
                 .isHidden(!viewModel.isSocialAuthAvailable, remove: true)
                 
+                Spacer()
+                    .isHidden(viewModel.isSocialAuthAvailable, remove: true)
+                
                 anonymousAuthView
+                    .padding(.vertical)
                 
                 Button("Logout") {
                     withAnimation {
@@ -155,7 +159,7 @@ struct AuthenticationView: View{
         }
         .bold()
         .foregroundStyle(.gray)
-        .padding(.vertical)
+        .padding(.top)
     }
 }
 

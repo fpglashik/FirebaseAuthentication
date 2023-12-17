@@ -167,7 +167,7 @@ struct PhoneAuthenticationView: View {
         VStack{
             Button{
                 withAnimation{
-                    progressHandler.updateProgressState(true, message: "Verifying")
+                    progressHandler.updateProgressState(true, message: viewModel.authState == .register ? "Logging In" : "Verifying")
                     viewModel.submit {
                         progressHandler.updateProgressState(false)
                     }
