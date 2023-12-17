@@ -209,33 +209,28 @@ extension FirebaseAuthProvider: EmailAuthProvider{
 extension FirebaseAuthProvider: PhoneAuthProvider{
 
     func phoneRegister(phone: String, handler: AuthResponseHandler? = nil) {
-        print("hello 0")
+        
         guard firebaseUser == nil else{
-            print("hello 00")
             handler?(.alreadyLoggedIn)
             return
         }
         guard !inProgress else{
-            print("hello 000")
             handler?(.inProgress)
             return
         }
         
         FirebaseAuth.PhoneAuthProvider.provider().verifyPhoneNumber(phone, uiDelegate: nil){[weak self] verificationID, error in
-              print("hello 1")
+            
             var authError: AuthError? = nil
             if let error{
-                print("hello 2")
                 authError = .other("Login Failed", error.localizedDescription)
             }
             else{
-                print("hello 3")
                 UserDefaults.standard.set(verificationID, forKey: "PhoneUserVerificationID")
             }
-            print("hello 4")
+            
             handler?(authError)
             self?.inProgress = false
-            print("hello 5")
         }
     }
     
