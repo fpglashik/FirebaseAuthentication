@@ -108,7 +108,7 @@ extension DummyAuthProvider: SocialAuthProvider{
         [.apple, .google]
     }
     
-    func socialLogin(option: SocialAuthOption, handler: AuthResponseHandler?){
+    func socialLogin(option: SocialAuthOption, handler: AuthResponseHandler? = nil){
         
         guard user == nil else{
             handler?(.alreadyLoggedIn)
@@ -143,7 +143,7 @@ extension DummyAuthProvider: SocialAuthProvider{
 
 // MARK: - EmailAuthProvider Delegates
 extension DummyAuthProvider: EmailAuthProvider{
-    func emailPassRegister(displayName: String, email: String, password: String, handler: AuthResponseHandler?) {
+    func emailPassRegister(displayName: String, email: String, password: String, handler: AuthResponseHandler? = nil) {
         
         guard user == nil else{
             handler?(.alreadyLoggedIn)
@@ -167,7 +167,7 @@ extension DummyAuthProvider: EmailAuthProvider{
         }
     }
     
-    func emailPassLogin(email: String, password: String, handler: AuthResponseHandler?) {
+    func emailPassLogin(email: String, password: String, handler: AuthResponseHandler? = nil) {
         
         guard user == nil else{
             handler?(.alreadyLoggedIn)
@@ -191,7 +191,7 @@ extension DummyAuthProvider: EmailAuthProvider{
         }
     }
     
-    func resetPassword(email: String, handler: AuthResponseHandler?) {
+    func resetPassword(email: String, handler: AuthResponseHandler? = nil) {
         
         guard !inProgress else{
             handler?(.inProgress)
@@ -209,7 +209,7 @@ extension DummyAuthProvider: EmailAuthProvider{
 
 // MARK: - PhoneAuthProvider Delegates
 extension DummyAuthProvider: PhoneAuthProvider{
-    func phoneRegister(phone: String, handler: AuthResponseHandler?) {
+    func phoneRegister(phone: String, handler: AuthResponseHandler? = nil) {
         
         guard user == nil else{
             handler?(.alreadyLoggedIn)
@@ -233,7 +233,7 @@ extension DummyAuthProvider: PhoneAuthProvider{
         inProgress = true
     }
     
-    func verifyPhoneNumber(code: String, handler: AuthResponseHandler?) {
+    func verifyPhoneNumber(code: String, handler: AuthResponseHandler? = nil) {
         
         guard user == nil else{
             handler?(.alreadyLoggedIn)
