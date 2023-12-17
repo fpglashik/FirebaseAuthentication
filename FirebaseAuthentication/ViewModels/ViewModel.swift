@@ -7,7 +7,11 @@
 
 import Foundation
 
-class AlerterViewModel: ObservableObject{
+class ViewModel: ObservableObject{
+    
+}
+
+class AlerterViewModel: ViewModel{
     
     @Published var isAlertPresented: Bool = false
     @Published var alert: AlertMe = .none{

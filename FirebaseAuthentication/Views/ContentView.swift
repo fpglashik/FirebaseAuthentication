@@ -11,8 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var authTracker: AuthTracker
     @State var showAuthView: Bool = false
-    let someColors: [Color] = [.red, .green, .blue]
-    let moreColors: [Color] = [.cyan, .teal, .orange, .brown, .gray]
+    let colors: [Color] = [.red, .green, .blue, .cyan, .teal, .orange, .brown, .gray]
     
     var body: some View {
         
@@ -22,21 +21,15 @@ struct ContentView: View {
                     .isHidden(!authTracker.isAuthenticated, remove: true)
                     .padding(.vertical)
                 
-                HStack{
-                    ForEach(someColors, id: \.self){ color in
-                        color.clipShape(.circle)
-                            .frame(width: 50, height: 50)
+                ScrollView(.horizontal, showsIndicators: true){
+                    HStack{
+                        ForEach(colors.prefix(authTracker.isAuthenticated ? colors.count : 3), id: \.self){ color in
+                            color.clipShape(.circle)
+                                .frame(width: 50, height: 50)
+                        }
                     }
+                    .frame(height: 100)
                 }
-                
-                HStack{
-                    ForEach(moreColors, id: \.self){ color in
-                        color.clipShape(.circle)
-                            .frame(width: 50, height: 50)
-                    }
-                }
-                .isHidden(!authTracker.isAuthenticated, remove: true)
-                
                 
                 Button("Login for More Colors") {
                     withAnimation {
@@ -56,8 +49,8 @@ struct ContentView: View {
                 .isHidden(!authTracker.isAuthenticated, remove: true)
             }
             .padding()
-            
-            AuthenticationView(viewModel: AuthenticationViewModel(authProvider: authTracker.authProvider))
+                        
+            authView
                 .isHidden(!showAuthView, remove: true)
         }
         .onChange(of: authTracker.isAuthenticated){ value in
@@ -66,9 +59,35 @@ struct ContentView: View {
             }
         }
     }
+    
+    private var authView: some View{
+        ZStack{
+            Color(.systemBackground)
+                .ignoresSafeArea()
+            
+            AuthenticationView(viewModel: AuthenticationViewModel(authProvider: authTracker.authProvider))
+            
+            HStack{
+                VStack{
+                    Button{
+                        withAnimation {
+                            showAuthView = false
+                        }
+                    } label:{
+                        Image(systemName: "chevron.backward")
+                            .foregroundStyle(.red)
+                            .scaleEffect(CGSize(width: 2, height: 2), anchor: UnitPoint(x: -0.2, y: -0.1))
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+        }
+    }
 }
 
 #Preview {
     ContentView()
         .environmentObject(AuthTracker(authProvider: DummyAuthProvider()))
+        .environmentObject(CustomProgressHandler())
 }

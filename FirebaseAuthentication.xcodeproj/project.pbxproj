@@ -12,6 +12,8 @@
 		1A005A9E2B2B194300213E72 /* SocialAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A005A9D2B2B194300213E72 /* SocialAuthenticationView.swift */; };
 		1A005AA02B2B1ED300213E72 /* SocialAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A005A9F2B2B1ED300213E72 /* SocialAuthenticationViewModel.swift */; };
 		1AA9BA032B2B5FA300536719 /* CustomProgressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA9BA022B2B5FA300536719 /* CustomProgressHandler.swift */; };
+		1AC3487C2B2F0DB100610AD3 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3487B2B2F0DB100610AD3 /* String+Ext.swift */; };
+		1AC3487E2B2F0E9300610AD3 /* PhoneAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3487D2B2F0E9300610AD3 /* PhoneAuthenticationViewModel.swift */; };
 		1ACAF5642B2A162500BB898B /* FirebaseAuthenticationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF5632B2A162500BB898B /* FirebaseAuthenticationApp.swift */; };
 		1ACAF5662B2A162500BB898B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF5652B2A162500BB898B /* ContentView.swift */; };
 		1ACAF5682B2A162700BB898B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAF5672B2A162700BB898B /* Assets.xcassets */; };
@@ -27,7 +29,7 @@
 		1ACAF58F2B2A543E00BB898B /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF58E2B2A543D00BB898B /* AuthenticationView.swift */; };
 		1ACAF5912B2A548200BB898B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAF5902B2A548200BB898B /* View+Ext.swift */; };
 		1ADA90B92B2E450B00AD65CB /* PhoneAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA90B82B2E450B00AD65CB /* PhoneAuthenticationView.swift */; };
-		1ADA90BB2B2E45F700AD65CB /* AlerterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA90BA2B2E45F700AD65CB /* AlerterViewModel.swift */; };
+		1ADA90BB2B2E45F700AD65CB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA90BA2B2E45F700AD65CB /* ViewModel.swift */; };
 		1ADA90BD2B2E4C8B00AD65CB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA90BC2B2E4C8B00AD65CB /* CustomButton.swift */; };
 		1AF4EED92B2B821D00777B38 /* AnonymousAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF4EED82B2B821D00777B38 /* AnonymousAuthenticationView.swift */; };
 		1AF4EEDB2B2B885100777B38 /* AnonymousAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF4EEDA2B2B885100777B38 /* AnonymousAuthenticationViewModel.swift */; };
@@ -46,6 +48,8 @@
 		1A005A9D2B2B194300213E72 /* SocialAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthenticationView.swift; sourceTree = "<group>"; };
 		1A005A9F2B2B1ED300213E72 /* SocialAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1AA9BA022B2B5FA300536719 /* CustomProgressHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressHandler.swift; sourceTree = "<group>"; };
+		1AC3487B2B2F0DB100610AD3 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		1AC3487D2B2F0E9300610AD3 /* PhoneAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1ACAF5602B2A162500BB898B /* FirebaseAuthentication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAuthentication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ACAF5632B2A162500BB898B /* FirebaseAuthenticationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationApp.swift; sourceTree = "<group>"; };
 		1ACAF5652B2A162500BB898B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +66,7 @@
 		1ACAF58E2B2A543D00BB898B /* AuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		1ACAF5902B2A548200BB898B /* View+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		1ADA90B82B2E450B00AD65CB /* PhoneAuthenticationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneAuthenticationView.swift; sourceTree = "<group>"; };
-		1ADA90BA2B2E45F700AD65CB /* AlerterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlerterViewModel.swift; sourceTree = "<group>"; };
+		1ADA90BA2B2E45F700AD65CB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1ADA90BC2B2E4C8B00AD65CB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1AF4EED82B2B821D00777B38 /* AnonymousAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousAuthenticationView.swift; sourceTree = "<group>"; };
 		1AF4EEDA2B2B885100777B38 /* AnonymousAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousAuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -119,8 +123,8 @@
 				1A005A9C2B2B05F200213E72 /* ViewModifiers */,
 				1ACAF5862B2A536E00BB898B /* Extensions */,
 				1ACAF5772B2A1A2A00BB898B /* Models */,
-				1ACAF5842B2A535B00BB898B /* Views */,
 				1ACAF5852B2A536700BB898B /* ViewModels */,
+				1ACAF5842B2A535B00BB898B /* Views */,
 				1ACAF5632B2A162500BB898B /* FirebaseAuthenticationApp.swift */,
 				1ACAF5712B2A192B00BB898B /* GoogleService-Info.plist */,
 				1ACAF5672B2A162700BB898B /* Assets.xcassets */,
@@ -168,12 +172,13 @@
 		1ACAF5852B2A536700BB898B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1ADA90BA2B2E45F700AD65CB /* ViewModel.swift */,
 				1AA9BA022B2B5FA300536719 /* CustomProgressHandler.swift */,
 				1ACAF5882B2A53F400BB898B /* AuthenticationViewModel.swift */,
 				1A005A9F2B2B1ED300213E72 /* SocialAuthenticationViewModel.swift */,
 				1AF4EEDA2B2B885100777B38 /* AnonymousAuthenticationViewModel.swift */,
 				1AF5CCA72B2BBF59000AF886 /* EmailAuthenticationViewModel.swift */,
-				1ADA90BA2B2E45F700AD65CB /* AlerterViewModel.swift */,
+				1AC3487D2B2F0E9300610AD3 /* PhoneAuthenticationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				1ACAF5902B2A548200BB898B /* View+Ext.swift */,
+				1AC3487B2B2F0DB100610AD3 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,18 +337,20 @@
 			files = (
 				1ADA90BD2B2E4C8B00AD65CB /* CustomButton.swift in Sources */,
 				1AF4EED92B2B821D00777B38 /* AnonymousAuthenticationView.swift in Sources */,
-				1ADA90BB2B2E45F700AD65CB /* AlerterViewModel.swift in Sources */,
+				1ADA90BB2B2E45F700AD65CB /* ViewModel.swift in Sources */,
 				1ACAF5912B2A548200BB898B /* View+Ext.swift in Sources */,
 				1ACAF57B2B2A47D200BB898B /* AuthError.swift in Sources */,
 				1ACAF5662B2A162500BB898B /* ContentView.swift in Sources */,
 				1AF5CCAE2B2BC052000AF886 /* CustomTextField.swift in Sources */,
 				1ADA90B92B2E450B00AD65CB /* PhoneAuthenticationView.swift in Sources */,
 				1ACAF5742B2A19C000BB898B /* AuthTracker.swift in Sources */,
+				1AC3487C2B2F0DB100610AD3 /* String+Ext.swift in Sources */,
 				1ACAF58F2B2A543E00BB898B /* AuthenticationView.swift in Sources */,
 				1A005A992B2AF83100213E72 /* AlertMe.swift in Sources */,
 				1AA9BA032B2B5FA300536719 /* CustomProgressHandler.swift in Sources */,
 				1AF5CCAD2B2BC052000AF886 /* CustomSecureField.swift in Sources */,
 				1ACAF5812B2A4D7A00BB898B /* DummyAuthProvider.swift in Sources */,
+				1AC3487E2B2F0E9300610AD3 /* PhoneAuthenticationViewModel.swift in Sources */,
 				1AF5CCA82B2BBF59000AF886 /* EmailAuthenticationViewModel.swift in Sources */,
 				1ACAF5762B2A19FD00BB898B /* AuthProvider.swift in Sources */,
 				1ACAF57F2B2A49FE00BB898B /* LogoView.swift in Sources */,

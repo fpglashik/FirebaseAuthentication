@@ -19,57 +19,62 @@ struct AuthenticationView: View{
             Color(.systemBackground)
                 .ignoresSafeArea()
             
-            VStack {
-                
-                LogoView()
-                    .scaleEffect(0.75, anchor: UnitPoint(x: 0.5, y: 0))
-                    .padding(.bottom)
-                
-                if viewModel.isEmailAuthAvailable && viewModel.isPhoneAuthAvailable{
-                    CustomButton(title: "Email Authentication") {
-                        withAnimation {
-                            viewModel.selectEmailAuthView()
+            if authTracker.isAuthenticated{
+                Text("You are logged in as \(authTracker.displayName)")
+            }
+            else{
+                VStack {
+                    
+                    LogoView()
+                        .scaleEffect(0.75, anchor: UnitPoint(x: 0.5, y: 0))
+                        .padding(.bottom)
+                    
+                    if viewModel.isEmailAuthAvailable && viewModel.isPhoneAuthAvailable{
+                        CustomButton(title: "Email Authentication") {
+                            withAnimation {
+                                viewModel.selectEmailAuthView()
+                            }
+                        }
+                        CustomButton(title: "Phone Authentication"){
+                           withAnimation {
+                               viewModel.selectPhoneAuthView()
+                           }
                         }
                     }
-                    CustomButton(title: "Phone Authentication"){
-                       withAnimation {
-                           viewModel.selectPhoneAuthView()
-                       }
+                    else{
+                        Group{
+                            emailAuthView
+                            phoneAuthView
+                        }
+                        .padding(.bottom)
                     }
-                }
-                else{
+                    
                     Group{
-                        emailAuthView
-                        phoneAuthView
+                        Spacer()
+                        hDivider
+                        Text("Use a Social Login")
+                            .foregroundStyle(Color(.secondaryLabel))
+                        socialAuthView
                     }
-                    .padding(.bottom)
-                }
-                
-                Group{
+                    .isHidden(!viewModel.isSocialAuthAvailable, remove: true)
+                    
                     Spacer()
-                    hDivider
-                    Text("Use a Social Login")
-                        .foregroundStyle(Color(.secondaryLabel))
-                    socialAuthView
-                }
-                .isHidden(!viewModel.isSocialAuthAvailable, remove: true)
-                
-                Spacer()
-                    .isHidden(viewModel.isSocialAuthAvailable, remove: true)
-                
-                anonymousAuthView
-                    .padding(.vertical)
-                
-                Button("Logout") {
-                    withAnimation {
-                        authTracker.authProvider.logout(handler: nil)
+                        .isHidden(viewModel.isSocialAuthAvailable, remove: true)
+                    
+                    anonymousAuthView
+                        .padding(.vertical)
+                    
+                    Button("Logout") {
+                        withAnimation {
+                            authTracker.authProvider.logout(handler: nil)
+                        }
                     }
+                    .isHidden(!authTracker.isAuthenticated, remove: true)
+                    
                 }
-                .isHidden(!authTracker.isAuthenticated, remove: true)
                 
+                selectedAuthView
             }
-            
-            selectedAuthView
                 
         }
         .frame(maxWidth: 400)

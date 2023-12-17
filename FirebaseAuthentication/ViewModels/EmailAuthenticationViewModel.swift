@@ -93,8 +93,7 @@ class EmailAuthenticationViewModel: AlerterViewModel{
         return displayName.count >= 3 && displayName.count <= 10
     }
     var isEmailValid: Bool{
-        let emailRegex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+        email.isEmail
     }
     var isPasswordValid: Bool{
         return password.count >= 4
