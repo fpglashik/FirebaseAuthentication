@@ -11,7 +11,7 @@ import FirebaseCore
 @main
 struct FirebaseAuthenticationApp: App {
     
-    @StateObject var authTracker = AuthTracker(authProvider: DummyAuthProvider())
+    @StateObject var authTracker = AuthTracker(authProvider: FirebaseAuthProvider())
 
     init() {
         // Use Firebase library to configure APIs
