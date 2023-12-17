@@ -17,7 +17,7 @@ extension String {
     }
     
     var isEmail: Bool {
-        let emailPattern = #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"#
+        let emailPattern: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailPattern)
             .evaluate(with: self)
     }

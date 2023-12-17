@@ -230,7 +230,6 @@ extension DummyAuthProvider: PhoneAuthProvider{
             self.inProgress = false
         }
         
-        inProgress = true
     }
     
     func verifyPhoneNumber(code: String, handler: AuthResponseHandler? = nil) {
